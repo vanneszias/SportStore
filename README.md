@@ -82,7 +82,7 @@ SportStore is a modern, full-featured ASP.NET Core MVC webshop for sporting good
 
 ## License
 
-MIT
+[MIT](LICENSE)
 
 ---
 
