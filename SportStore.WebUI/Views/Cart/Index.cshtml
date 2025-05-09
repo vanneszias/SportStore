@@ -1,0 +1,47 @@
+@model SportStore.WebUI.Models.ShoppingCart
+@{
+    ViewData["Title"] = "Shopping Cart";
+}
+<h1 class="mb-4 fw-bold" style="color:#1e90ff"><i class="fa-solid fa-cart-shopping me-2"></i>Shopping Cart</h1>
+@if (!Model.Lines.Any())
+{
+    <div class="alert alert-info">Your cart is empty.</div>
+}
+else
+{
+    <form asp-action="Clear" method="post">
+        <button type="submit" class="btn btn-danger mb-3"><i class="fa-solid fa-trash"></i> Clear Cart</button>
+    </form>
+    <div class="row g-3">
+        @foreach (var line in Model.Lines)
+        {
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="sport-card card h-100">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-4">
+                            @if (!string.IsNullOrEmpty(line.ImageURL))
+                            {
+                                <img src="@line.ImageURL" alt="@line.ProductName" class="sport-card-img-top img-fluid p-2" style="max-height:100px;object-fit:contain;" />
+                            }
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body py-2">
+                                <h5 class="sport-card-title card-title mb-1">@line.ProductName</h5>
+                                <div class="mb-1"><span class="sport-card-price">@line.Price.ToString("C")</span> x <span class="fw-bold">@line.Quantity</span></div>
+                                <div class="mb-2">Subtotal: <span class="fw-bold">@(line.Price * line.Quantity).ToString("C")</span></div>
+                                <form asp-action="Remove" method="post" class="d-inline">
+                                    <input type="hidden" name="productId" value="@line.ProductId" />
+                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa-solid fa-xmark"></i> Remove</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="text-end mt-4">
+        <h4 class="fw-bold">Total: <span style="color:#0a8754">@Model.Subtotal.ToString("C")</span></h4>
+        <a asp-controller="Order" asp-action="Checkout" class="btn btn-sport btn-lg"><i class="fa-solid fa-credit-card"></i> Checkout</a>
+    </div>
+} 

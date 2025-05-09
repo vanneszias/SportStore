@@ -1,0 +1,43 @@
+@model dynamic
+@{
+    ViewData["Title"] = "Order Confirmation";
+}
+<h1 class="mb-4 fw-bold" style="color:#0a8754"><i class="fa-solid fa-clipboard-check me-2"></i>Order Confirmation</h1>
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-7">
+        <div class="sport-card card p-4 mb-4">
+            <div class="alert alert-success"><i class="fa-solid fa-thumbs-up me-2"></i>Thank you for your order!</div>
+            <h4 class="fw-bold mb-3" style="color:#1e90ff"><i class="fa-solid fa-receipt me-2"></i>Order Details</h4>
+            <ul class="mb-4">
+                <li><strong>Name:</strong> @Model.DeliveryName</li>
+                <li><strong>Address:</strong> @Model.DeliveryAddress</li>
+                <li><strong>City:</strong> @Model.DeliveryCity</li>
+                <li><strong>Postal Code:</strong> @Model.DeliveryPostalCode</li>
+                <li><strong>Date:</strong> @Model.OrderDate.ToString("g")</li>
+            </ul>
+            <h4 class="fw-bold mb-3" style="color:#1e90ff"><i class="fa-solid fa-boxes-stacked me-2"></i>Products</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var line in Model.Lines)
+                {
+                    <tr>
+                        <td>@line.ProductName</td>
+                        <td>@line.PriceAtOrder.ToString("C")</td>
+                        <td>@line.Quantity</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+            <div class="text-end mt-3">
+                <a asp-controller="Product" asp-action="Index" class="btn btn-sport"><i class="fa-solid fa-arrow-left"></i> Back to Catalog</a>
+            </div>
+        </div>
+    </div>
+</div> 

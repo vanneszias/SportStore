@@ -1,0 +1,128 @@
+/* SportStore custom theme */
+body {
+  font-family: "Montserrat", Arial, sans-serif;
+  background: #f6f8fa;
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.sport-navbar {
+  background: linear-gradient(90deg, #0a8754 0%, #1e90ff 100%);
+  box-shadow: 0 2px 8px rgba(30, 144, 255, 0.08);
+}
+.sport-navbar .navbar-brand,
+.sport-navbar .nav-link,
+.sport-navbar .btn {
+  color: #fff !important;
+}
+.sport-navbar .nav-link.active,
+.sport-navbar .nav-link:hover {
+  color: #ffe082 !important;
+}
+.sport-navbar .btn-outline-light {
+  border-color: #fff;
+  color: #fff;
+}
+.sport-navbar .btn-outline-light:hover {
+  background: #ffe082;
+  color: #0a8754;
+  border-color: #ffe082;
+}
+.sportstore-logo {
+  font-size: 1.7rem;
+  color: #ffe082;
+}
+.sport-main-container {
+  flex: 1 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Product Card Styles */
+.sport-card {
+  border: none;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 16px rgba(30, 144, 255, 0.1);
+  transition: transform 0.15s, box-shadow 0.15s;
+  background: #fff;
+}
+.sport-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(10, 135, 84, 0.15);
+}
+.sport-card-img-top {
+  border-top-left-radius: 1.2rem;
+  border-top-right-radius: 1.2rem;
+  max-height: 220px;
+  object-fit: cover;
+}
+.sport-card-title {
+  font-weight: 700;
+  color: #0a8754;
+}
+.sport-card-price {
+  font-size: 1.2rem;
+  color: #1e90ff;
+  font-weight: 600;
+}
+.sport-card-btn {
+  background: #0a8754;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+.sport-card-btn:hover {
+  background: #1e90ff;
+  color: #fff;
+}
+
+/* Footer */
+.sport-footer {
+  flex-shrink: 0;
+  background: linear-gradient(90deg, #0a8754 0%, #1e90ff 100%);
+  color: #fff;
+  border-top: none;
+}
+.sport-footer a {
+  color: #ffe082;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.sport-footer a:hover {
+  color: #fff;
+}
+
+/* Misc */
+.btn-sport {
+  background: #1e90ff;
+  color: #fff;
+  border-radius: 2rem;
+  font-weight: 600;
+  border: none;
+  transition: background 0.15s;
+}
+.btn-sport:hover {
+  background: #0a8754;
+  color: #fff;
+}
+
+/* Cart badge */
+.sport-cart-badge {
+  background: #ffe082;
+  color: #0a8754;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 0.3em 0.7em;
+  font-size: 0.9em;
+  margin-left: 0.3em;
+}

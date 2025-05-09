@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="sport-hero text-center py-5 mb-5">
+    <div class="container">
+        <span class="sportstore-logo display-3"><i class="fa-solid fa-dumbbell"></i></span>
+        <h1 class="display-4 fw-bold mt-3" style="color:#0a8754">Welcome to SportStore</h1>
+        <p class="lead mb-4" style="color:#1e90ff">Your one-stop shop for all things sports! Discover the best gear, apparel, and accessories for every athlete and every sport.</p>
+        <a asp-controller="Product" asp-action="Index" class="btn btn-sport btn-lg px-5"><i class="fa-solid fa-list"></i> Shop Catalog</a>
+    </div>
+</div>
+<div class="container mb-5">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="sport-card card h-100 text-center p-3">
+                <div class="display-5 mb-2" style="color:#1e90ff"><i class="fa-solid fa-futbol"></i></div>
+                <h5 class="fw-bold">Top Brands</h5>
+                <p>We stock the latest from Nike, Adidas, Puma, and more. Quality guaranteed for every athlete.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="sport-card card h-100 text-center p-3">
+                <div class="display-5 mb-2" style="color:#0a8754"><i class="fa-solid fa-basketball"></i></div>
+                <h5 class="fw-bold">All Sports</h5>
+                <p>From football to fitness, basketball to running, find equipment and apparel for your favorite sport.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="sport-card card h-100 text-center p-3">
+                <div class="display-5 mb-2" style="color:#ffe082"><i class="fa-solid fa-truck-fast"></i></div>
+                <h5 class="fw-bold">Fast Delivery</h5>
+                <p>Get your gear delivered quickly and reliably, so you can get back in the game without delay.</p>
+            </div>
+        </div>
+    </div>
+</div>
